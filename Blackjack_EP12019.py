@@ -48,9 +48,6 @@ for i in range(0,len(jogadores)):
  
  
  
- 
- 
- 
 """ saldo_inicial=100
 saldo=saldo_inicial """
 play_again='s'
