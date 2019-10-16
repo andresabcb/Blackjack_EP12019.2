@@ -133,7 +133,15 @@ while play_again=='s' and fichas>0 and baralhos<=4 and baralhos>0:
                     fichas+=1
                     print('Você ganhou o equivalente ao que apostou e mais uma ficha. Seu saldo agora é de {0} {1} .'.format(dic_jogadores_por_saldo[p],p))
                     break
-
+                if escolha=='c' or escolha=='C':
+                    nova_carta=retorna_carta(cartas_embaralhadas)
+                    soma_de_cartas+=nova_carta
+                    if soma_de_cartas==21:
+                        dic_jogadores_por_saldo[p]+=valor_apostado*2.5
+                        fichas+=2
+                        print('Você ganhou o jogo (BLACKJACK), mais duas fichas e mais {0} dólares pelo sorteio MADNESS {1}.'.format(madness(),p))
+                        break
+                print('Sua nova carta é: {0} (soma: {1}).\n'.format(nova_carta,soma_de_cartas))
         
         if soma_de_cartas>21:
             print('Você estourou! Seu saldo agora é de {0} {1} .'.format(dic_jogadores_por_saldo[p],p))   
